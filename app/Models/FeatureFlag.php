@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Car extends Model
+class FeatureFlag extends Model
 {
     use HasFactory;
-    protected $fillable =['nome', 'marca', 'ano_modelo'];
 
+    protected $fillable =['chave', 'valor', 'descricao'];
 }

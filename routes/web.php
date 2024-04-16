@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\FeatureFlagController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,9 @@ Route::get('products/{id}/edit', [ProductsController::class, 'edit'])->name('pro
 Route::post('/products/store', [ProductsController::class, 'store'])->name('products.store');
 Route::put('/products/{id}', [ProductsController::class, 'update'])->name('products.update');
 Route::delete('/products/{id}', [ProductsController::class, 'destroy'])->name('products.destroy');
+
+Route::get('/feature', [FeatureFlagController::class, 'index']);
+Route::get('/feature/create', [FeatureFlagController::class, 'create'])->name('feature.create');
+Route::post('/feature', [FeatureFlagController::class, 'store'])->name('feature.store');
+Route::get('feature/{id}/edit', [FeatureFlagController::class, 'edit'])->name('feature.edit');
+Route::put('/feature/{id}', [FeatureFlagController::class, 'update'])->name('feature.update');

@@ -9,7 +9,7 @@
   <div class="mb-3">
     <label for="nome" class="form-label">Nome</label>
     <input type="text" name="nome" class="form-control" id="nome"
-    value="{{$client->nome}}"
+    
     placeholder="Digite o nome do carro">
   </div>
   <div class="mb-3">

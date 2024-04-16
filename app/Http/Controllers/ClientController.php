@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\FeatureFlag;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -12,6 +13,7 @@ class ClientController extends Controller
    */
   public function index()
   {
+    $feature = FeatureFlag::find(2);
     $clients = Client::get();
     // foreach($clients as $client){
     //   dd($client->nome);
@@ -19,7 +21,8 @@ class ClientController extends Controller
     return view(
       'clients.index',
       [
-        'clients' => $clients
+        'clients' => $clients,
+        'feature'=> $feature
       ]
     );
   }
@@ -29,8 +32,11 @@ class ClientController extends Controller
    */
   public function create()
   {
+    $feature = FeatureFlag::find(2);
+    // dd($feature);
     return view(
-      'clients.create'
+      'clients.create',
+      ['feature'=> $feature]
     );
   }
 

@@ -24,6 +24,7 @@
           <a class="nav-link active" aria-current="page" href="/clients">Home</a>
           <a class="nav-link" href="/products">Produtos</a>
           <a class="nav-link" href="/cars">Carros</a>
+          <a class="nav-link" href="/feature">Feature</a>
 
         </div>
       </div>
@@ -33,7 +34,7 @@
     @yield('content')
   </div>
 
-  <!-- <footer>
+  <footer>
     <div class="card-footer ">
       <p>&copy;Desenvolvido por Raphael Pitol
       <a class="link" href="//www.facebook.com/raphael.pitoljuliani.7/" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-facebook"></ion-icon></a>
@@ -41,7 +42,7 @@
       <a class="link" href="https://github.com/RaphaelPitol" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-github"></ion-icon></a>
       </p>
     </div>
-  </footer> -->
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

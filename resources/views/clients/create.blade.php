@@ -2,6 +2,7 @@
 @section('title', 'Novo Cliente')
 @section('content')
 
+
 <form action="{{route('clients.store')}}" method="POST">
   @csrf
   <h1>Cadastro de Cliente</h1>
@@ -14,12 +15,19 @@
     <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Digite o endereço">
   </div>
   <div class="mb-3">
-  <label for="observacao" class="form-label">Observação</label>
-  <textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea>
-</div>
+    <label for="observacao" class="form-label">Observação</label>
+    <textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea>
+  </div>
+  
+  @if($feature->valor == true)
+  <button type="submit" class="btn btn-success">Cadastrar Cliente</button>
+  @else
+  <h1>Não esta Autorizado a cadastrar</h1>
+  @endif
+  </form>
 
-<button type="submit" class="btn btn-success">Cadastrar Cliente</button>
 
-</form>
+
+
 
 @endsection

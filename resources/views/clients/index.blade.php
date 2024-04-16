@@ -33,5 +33,12 @@
   </tbody>
 </table>
 
+
+@if($feature->valor == true)
 <a class="btn btn-success" href="{{route('clients.create')}}">Cadastrar</a>
+
+@else
+<p>Usuario não esta autorizado a Cadastrar</p>
+
+@endif
 @endsection
