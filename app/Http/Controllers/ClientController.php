@@ -18,6 +18,13 @@ class ClientController extends Controller
     // foreach($clients as $client){
     //   dd($client->nome);
     // }
+
+    // echo(var_dump($feature->valor));
+    // dd("teste");
+    if($feature->valor == 0){
+      return view('login.login');
+    }
+
     return view(
       'clients.index',
       [
