@@ -4,7 +4,7 @@
 
 <form action="{{route('cep.consultacep')}}" method="POST">
   @csrf
-  <h1>Consulat Cep</h1>
+  <h1>Consulta Cep</h1>
   <div class="form-group mx-sm-3 mb-2">
     <label for="cep" class="sr-only">Cep</label>
     <input type="number" class="form-control" id="cep" name="cep" placeholder="Digite seu Cep">
