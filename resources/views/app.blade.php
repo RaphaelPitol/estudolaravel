@@ -25,6 +25,7 @@
           <a class="nav-link" href="/products">Produtos</a>
           <a class="nav-link" href="/cars">Carros</a>
           <a class="nav-link" href="/feature">Feature</a>
+          <a class="nav-link" href="/cep">Cep</a>
 
         </div>
       </div>

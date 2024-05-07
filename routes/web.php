@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuscaCepController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FeatureFlagController;
@@ -37,3 +38,6 @@ Route::get('/feature/create', [FeatureFlagController::class, 'create'])->name('f
 Route::post('/feature', [FeatureFlagController::class, 'store'])->name('feature.store');
 Route::get('feature/{id}/edit', [FeatureFlagController::class, 'edit'])->name('feature.edit');
 Route::put('/feature/{id}', [FeatureFlagController::class, 'update'])->name('feature.update');
+
+Route::get('/cep', [BuscaCepController::class, 'index']);
+Route::post('/cep', [BuscaCepController::class, 'consultacep'])->name('cep.consultacep');
