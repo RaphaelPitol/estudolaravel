@@ -17,11 +17,20 @@ class BuscaCepController extends Controller
         
         $endereco = $response->json();
         
-        // dd($endereco);
-    
-        return view('cep.index',[
-          "endereco" => $endereco
-        ]);
+     
+        // dd($endereco['erro']);
+        if(!array_key_exists('erro', $endereco)){
+          return view('cep.index',[
+            "endereco" => $endereco
+          ]);
+
+        }
+        if($endereco['erro']){
+          $erro = "Cep Não encontrado";
+          return view('cep.index',[
+            "erro" => $erro
+          ]);
+        }
   }
     /**
      * Display a listing of the resource.

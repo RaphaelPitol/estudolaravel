@@ -12,6 +12,16 @@
   <button type="submit" class="btn btn-primary mb-2">Buscar</button>
 </form>
 
+@if (isset($erro))
+<div class="alert alert-danger">
+  <ul>
+    
+    <li>{{ $erro }}</li>
+   
+  </ul>
+</div>
+@endif
+
 @if(!empty($endereco))
 <div class="car-body">
   <p><strong>Rua: </strong>{{$endereco['logradouro']}}</p>
@@ -21,6 +31,7 @@
   <br>
 </div>
 @endif
+
 
 
 @endsection
