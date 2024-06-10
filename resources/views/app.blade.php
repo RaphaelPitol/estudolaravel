@@ -22,10 +22,11 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <a class="nav-link" href="/products">Produtos</a>
+          <a class="nav-link" href="{{route('products.index')}}">Produtos</a>
           <a class="nav-link" href="/cars">Carros</a>
           <a class="nav-link" href="/feature">Feature</a>
-          <a class="nav-link" href="/cep">Cep</a>
+          <a class="nav-link" href="{{route('cep.consultacep')}}">Cep</a>
+          <a class="nav-link" href="{{route('pokeapi')}}">Batalha</a>
 
         </div>
       </div>

@@ -11,6 +11,14 @@ class BuscaCepController extends Controller
   public function consultacep(Request $request){
 
     $cep = $request->input('cep');
+   // echo strlen($cep);
+    if(strlen($cep) != 8) {
+      $erro = "Deve ter 8 numeros!";
+          return view('cep.index',[
+            "erro" => $erro
+          ]);
+    }
+    //dd();
         
         $response = Http::withOptions(['verify' => false])->get('https://viacep.com.br/ws/' . $cep . '/json');
        
