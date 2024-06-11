@@ -26,13 +26,21 @@ class BuscaCepController extends Controller
         $endereco = $response->json();
         
      
-        // dd($endereco['erro']);
+        // dd($endereco);
         if(!array_key_exists('erro', $endereco)){
           return view('cep.index',[
             "endereco" => $endereco
           ]);
 
         }
+
+        if($endereco == null){
+          $erro = "Verifique sua conexão com a Internet.";
+          return view('cep.index',[
+            "erro" => $erro
+          ]);
+        }
+
         if($endereco['erro']){
           $erro = "Cep Não encontrado";
           return view('cep.index',[

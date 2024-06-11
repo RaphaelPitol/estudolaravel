@@ -58,7 +58,7 @@ class ClientController extends Controller
     //  dd($dados);
     Client::create($dados);
 
-    return redirect('/clients');
+    return redirect('/');
   }
 
   /**
@@ -106,7 +106,7 @@ class ClientController extends Controller
       'observacao' => $request->observacao
     ]);
 
-    return redirect('/clients');
+    return redirect('/');
   }
 
   /**
@@ -116,6 +116,6 @@ class ClientController extends Controller
   {
     $client = Client::find($id);
     $client->delete();
-    return redirect('/clients');
+    return redirect('/');
   }
 }

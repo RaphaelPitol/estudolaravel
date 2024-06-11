@@ -56,3 +56,5 @@ Route::get('/logout', function(){
   Auth::logout();
   return view('home');
 });
+
+Route::get('/poke', [BattleController::class, 'getTodosPokemons']);

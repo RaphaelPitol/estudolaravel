@@ -5,18 +5,36 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+
 class BattleController extends Controller
 {
   public function index()
   {
-    return view('pokeapi.index');
+    
+    // $response = Http::withOptions(['verify' => false])->get("https://pokeapi.co/api/v2/pokemon?limit=151");
+      // dd($response->json());
+    $data = $this->getPokemonsList();
+      
+      // dd($data);
+  
+      // foreach($data as $client){
+      //   dd($client['name']);
+      // }
+  
+      // return view('pokeapi.list',[
+      //   'data' => $data
+
+    return view('pokeapi.index', [
+      'data' => $data
+    ]);
     //
   }
 
   public function battle(Request $request)
   {
-    $pokemon1_name = $request->input('pokemon1');
-    $pokemon2_name = $request->input('pokemon2');
+    // dd($request->option1);
+    $pokemon1_name = $request->option1;
+    $pokemon2_name = $request->option2;
 
     $pokemon1_data = $this->getPokemonData($pokemon1_name);
     $pokemon2_data = $this->getPokemonData($pokemon2_name);
@@ -29,6 +47,7 @@ class BattleController extends Controller
           ]);
     }
 
+    // dd($pokemon1_data,  $pokemon2_data);
     $pokemon1_attack = $pokemon1_data['stats'][1]['base_stat'];
     $pokemon2_attack = $pokemon2_data['stats'][1]['base_stat'];
 
@@ -40,8 +59,10 @@ class BattleController extends Controller
       $result = "Deu empate!";
     }
 
+    $data = $this->getPokemonsList();
     return view('pokeapi.index',[
-      "result" => $result
+      "result" => $result,
+      "data" => $data
     ]);
   }
 
@@ -54,5 +75,20 @@ class BattleController extends Controller
     } else {
       return null;
     }
+  }
+
+  public function getPokemonsList(){
+    $response = Http::withOptions(['verify' => false])->get("https://pokeapi.co/api/v2/pokemon?limit=151");
+    // dd($response->json());
+   return $response->json()['results'];
+    // dd($data);
+
+    // foreach($data as $client){
+    //   dd($client['name']);
+    // }
+
+    // return view('pokeapi.list',[
+    //   'data' => $data
+    // ]);
   }
 }

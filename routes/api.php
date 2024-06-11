@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/teste', function(){
+  return response([
+    "mensagem" => "O sistema esta ON"
+  ], 200);
+});
