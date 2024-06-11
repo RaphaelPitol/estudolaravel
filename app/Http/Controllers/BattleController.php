@@ -52,8 +52,10 @@ class BattleController extends Controller
     $pokemon2_attack = $pokemon2_data['stats'][1]['base_stat'];
 
     if ($pokemon1_attack > $pokemon2_attack) {
+      $pokemon1_name = ucfirst($pokemon1_name);
       $result = "$pokemon1_name é o vencedor";
     } elseif ($pokemon2_attack > $pokemon1_attack) {
+      $pokemon2_name = ucfirst($pokemon2_name);
       $result = "$pokemon2_name é o vencedor";
     } else {
       $result = "Deu empate!";
