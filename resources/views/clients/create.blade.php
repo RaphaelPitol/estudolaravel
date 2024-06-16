@@ -19,7 +19,8 @@
     <textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea>
   </div>
   
-  @if($feature->valor == true)
+  
+  @if($feature != null && $feature->valor == true)
   <button type="submit" class="btn btn-success">Cadastrar Cliente</button>
   @else
   <h1>Não esta Autorizado a cadastrar</h1>

@@ -14,6 +14,7 @@ class ClientController extends Controller
   public function index()
   {
     $feature = FeatureFlag::find(1);
+
     $clients = Client::get();
     // foreach($clients as $client){
     //   dd($client->nome);
@@ -21,10 +22,6 @@ class ClientController extends Controller
 
     // echo(var_dump($feature->valor));
     // dd("teste");
-  
-    if($feature->valor == 0){
-      return view('login.login');
-    }
 
     return view(
       'clients.index',

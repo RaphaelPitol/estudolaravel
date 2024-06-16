@@ -34,7 +34,7 @@
 </table>
 
 
-@if($feature->valor == true)
+@if($feature != null && $feature->valor == true)
 <a class="btn btn-success" href="{{route('clients.create')}}">Cadastrar</a>
 
 @else
